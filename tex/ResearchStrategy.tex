@@ -1,0 +1,37 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,mathrsfs,bm}
+\usepackage{color}
+\usepackage{cleveref}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{fullpage}
+\usepackage{natbib}
+\newcommand{\jb}[1]{{\color{blue} (#1)} }
+\newcommand{\gs}[1]{{\color{red} #1}}
+\begin{document}
+
+\subsection{Significant and Background}
+
+The quest to identify and map the genetic variants which underwrite human complex disease risk is now well into adulthood. The maturation of genome wide association studies (GWAS) has provided a deluge of information connecting various regions of the genome to variation in disease risk, and there has been an eruption of work in statistical genetics to relate the raw output of GWAS to various parameters of interest \jb{clunky sentence, make better}. Despite these devlopments, it is remarkable that development of theoretical population genetics models for the evoultion of complex disease as it relates to observable GWAS data has been almost non-existent, with a few notable exceptions \jb{cite Thornton/Long, Altshuler T2D}. Here, I summarize briefly what is known from these efforts, and highlight avenues for improvement
+
+\subsubsection{Non-causal models of complex disease evolution}
+
+Two of the most commonly cited population genetic efforts to model the evolution of complex disease belong to a category of what I will call ``non-causal'' models, in that the fitness consequences of a particular mutation are not causally downstream of its impact on disease status in any explicit manner. The first in this category is the model of \jb{Pritchard (2001)}, in which effect on disease risk and the selection coefficient are perfectly correlated in sign, but otherwise independent of one another \jb{if I'm reading it right; actually find the paper sort of unclear on this}.
+
+Another oft-cited model of complex disease evolution is that of \jb{Eyre-Walker (2009)}, which postulates a specific but arbitrary relationship between selection and the effect on disease.
+
+
+\subsection{One Dimensional Liability Models}
+In this class of models, disease liability is concieved of as an unobserved quantitative trait, with an individual's probability of developing disease arising as some non linear function of their value for the unobserved liability trait. The most recognizable models of this class are Falconer's liability threshold model, Risch's truncated multiplicative risk model, and the logistic regression model commonly used in genetic association studies \jb{that's correct, right?}. For many complex diseases, most authors seem to assume either implicitly or explicitly that disease risk architecture resembles one of these models, in part on the basis of GWAS data which indicate that disease risk is often dispersed among an extremely large number of loci.
+
+\subsection{Superposition of Mendelian Diseases Model}
+At an alternate extreme, some have suggested that complex disease may in fact be a superposition of many genetically indpedent Mendelian disorders, where each individiual case is the result of mutation(s) in just a single gene. This model comes in two basic flavors. The first corresponds to standard diploid selection models with a large and recessive fitness cost. This model is already known to be inconsistent with observed GWAS data \jb{right?, citation?}. The second is a gene based compound heterozygote loss of function model put forward by Long and Thornton. In this model, disease can result when an individual inherits two separate loss of function mutations at different physical positions within the same gene, resulting in non-complementation.
+
+\subsection{Recent Environmental Change Models}
+Recent environmental change is often put forward as a possible explanation for the high incidence of common disease. In the simplest versions of these models, one supposes that a recent change in the environment is responsiblse for an increase in the mean disease risk across the entire population (independent of genetics), or than an increase in the variance of environments experienced by individuals in the population leads to a longer tail of indiviudals at high risk for disease (again, independent of disease). In a more complicated version of this model put forward by Gibson \jb{anybody else predate him?}, the change in environment interacts with the genetics of the disease leading to a new distribution of genetic effects on disease risk that may be completely different from that which was present before the environmental shift. None of these scenarios are restricted to any paticular genetic model
+
+\subsection{}
+
+\end{document}
