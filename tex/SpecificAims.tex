@@ -1,4 +1,4 @@
-\documentclass[a4paper,10pt]{article}
+\documentclass[11pt]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,mathrsfs,bm}
@@ -8,20 +8,45 @@
 \usepackage{graphicx}
 \usepackage{fullpage}
 \usepackage{natbib}
+
+\usepackage{fontspec}
+\setmainfont{Arial}
+
+\usepackage{titlesec}
+\titlespacing\subsection{0pt}{0pt}{0pt}
+
+
 \newcommand{\jb}[1]{{\color{blue} (#1)} }
 \newcommand{\gs}[1]{{\color{red} #1}}
+
 \begin{document}
 
-Our ability to leverage and apply data regarding the genetics of complex disease depends critically on the extent to which we understand how factors such as the genetic architecture, pleiotropy, and changes to the environment affect the evolution of disease risk and its distribution across the population.
-GWAS has produced vast amounts of data informing on which positions in the genome are associated with variation in disease liability, but the answers to basic questions about what sort of genetic architectures are consistent with available evidence remain deeply contestsed, with models ranging from univariate liability threshold models to various forms of allelic or genetic heterogeneity retaining supporters.
-The extent to which these models have been formalized varies from one to the next, with some existing almost entirely in verbal form.
-With a few notable exceptations, surprisingly little is known concretely about the population genetic consquences of invoking a particular biological/genetic model of complex disease \jb{be careful here to make sure I don't come across as if no one has ever thought about all this before/appropriately reference what has been done}.
-A quantitative and formalized
-Working in collaboration with Dr Guy Sella, I will develop, formalize, and analyze an array of population genetic models of complex disease evolution. I will explore and analyze these mode
+%\renewcommand{\baselinestretch}{0.1}
+\setlength{\parskip}{\baselineskip}
 
-things people have claimed to be able to infer on the basis of some feature of GWAS:
-- more protective mutations than risk mutations -> must have been an environmental shift toward increased disease risk which is responsible for selecting protective alleles up
--
+\subsection*{Specific Aims}
 
-statistical genetics studies which seek to determine something about relationship between allele frequency and heritability explained are trying to make qualitative inference about genetic architecture. want to make the quantitative
+
+An understanding of the genetic architecture of complex disease (including e.g. the number of mutations contributing to disease risk and the distributions of their allele frequencies and effect sizes or odds ratios) is of particular importance in both human and evolutionary genetics. Such factors are major determinants of our ability to effectively map individual disease variants, and indeed many of the growing pains of the genome wide association (GWAS) approach (e.g. the missing heritability problem) stemmed from a mismatch between researchers expectations and the true nature of the genetic architecture of complex disease. A better understanding of the genetic architecture of disease would be valuable for guiding future study design, and for shaping intuition about the performance of polygenic prediction approaches when applied across evolutionarily diverged groups, and for the performance of multi-ethnic GWAS. Moreover, human disease GWAS currently represent one of the best opportunities to study the evolution of deleterious phenotypes and to understand how qunatitative genetic variation is maintained within populations.
+
+To this end, I will develop models of the population genetic processes governing complex disease evolution. I will use these models to develop tools to infer the parameters that shape the genetic architecture of a range of individual diseases, and to make forecasts about how architecture will impact efforts to extend the GWAS approach outside of European ancestry populations.
+
+\textbf{Specific Aim 1: Development models of the evolution of complex disease.} I will extend our preliminary model of complex disease evolution to understand how factors such as natural selection, pleiotropy, and demography affect the genetic architecture of genetic disease risk. The results of this aim will be an understanding of how observable factors such as the number of segregating variants that contribute to disease risk, their frequencies and their effect sizes depend on the mutational target size, the strength of the selection against the disease, and the nature of the pleiotropic effects of disease mutations.
+
+\textbf{Specific Aim 2: Statistical methods to infer the underlying parameters governing the evolution of complex disease.} The effect sizes (odds ratios) and frequencies of GWAS variants contain information about the about the nature of pleiotropic effects and the selection coefficients they experience. Using the models developed in Aim 1, I will design likelihood based inference machinery to infer the parameters governing the evolution of disease susceptibility from GWAS data. In addition to taking significant GWAS hits as input, I will expand my inference machinery to use information about how heritable variation is distributed among minor allele frequency bins (which can be inferred by other means). This represents a rich source of information which will help constrain the space of possible models that are compatible with the architecture of a given disease. I will apply the inference tools I develop to at least 10 GWAS datasets for complex disease. For each disease, I will be able to learn about the size of the mutational target (i.e. the number of bases in the genome where a mutation would affect disease liability), the ancestral fitness cost and prevalence of the disease, and a measure of the extent of pleiotropy fitness effects of alleles associated with disease risk. The inference tools I develop will be made available in a user friendly software package.
+
+% \textbf{Specific Aim 3: Impact of Genetic Architecture on multi-population GWAS efforts.} To date, the majority of GWAS have been performed in populations of European ancestry, but recognition is growing that there will be hard limits on our ability to port what is learned in these studies to populations of other ancestries. Aim 1 and 2 provide the necessary tools to understand how these limits depend on genetic architecture, in particular by infering the relationship between effect size on a given disease and selection coefficient. Given the a probabilistic inference of the selection coefficient experienced by a disease associated allele, I will use simulation based tools to study how the frequencies of disease associated loci evolve between populations under the influence of natural selection. The outcome of this aim will be A) predictions regarding our ability to use the results of GWAS in one population to predict disease risk in evolutionarily divergent populations with a particular focus on how variation in architecture will impact this effort.
+
+% Our ability to leverage and apply data regarding the genetics of complex disease depends critically on the extent to which we understand how factors such as the genetic architecture, pleiotropy, and changes to the environment affect the evolution of disease risk and its distribution across the population.
+% GWAS has produced vast amounts of data informing on which positions in the genome are associated with variation in disease liability, but the answers to basic questions about what sort of genetic architectures are consistent with available evidence remain deeply contestsed, with models ranging from univariate liability threshold models to various forms of allelic or genetic heterogeneity retaining supporters.
+% The extent to which these models have been formalized varies from one to the next, with some existing almost entirely in verbal form.
+% With a few notable exceptations, surprisingly little is known concretely about the population genetic consquences of invoking a particular biological/genetic model of complex disease \jb{be careful here to make sure I don't come across as if no one has ever thought about all this before/appropriately reference what has been done}.
+% A quantitative and formalized
+% Working in collaboration with Dr Guy Sella, I will develop, formalize, and analyze an array of population genetic models of complex disease evolution. I will explore and analyze these mode
+
+% things people have claimed to be able to infer on the basis of some feature of GWAS:
+% - more protective mutations than risk mutations -> must have been an environmental shift toward increased disease risk which is responsible for selecting protective alleles up
+% -
+
+% statistical genetics studies which seek to determine something about relationship between allele frequency and heritability explained are trying to make qualitative inference about genetic architecture. want to make the quantitative
 \end{document}
