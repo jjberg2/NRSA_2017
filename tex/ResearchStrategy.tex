@@ -51,21 +51,23 @@ Our simplest model and point of departure considers the impact of mutation and s
 \end{align}
 where an individual's liability for disease ($Z$) is an additive trait, $\alpha_i$ and $g_i$ are liability scale effect size and genotype respectively at site $i$, and $\epsilon$ is a normally distributed deviate which captures stochastic variation in risk among genotypes with the same mean liability, (i.e. the ``environment'' of classical quantitative genetics). An individual's probability of developing disease (i.e. their ``risk'': $R$) is a monotonic function of their liability. This form covers a range of standard models for the genetics of binary traits, including Wright's liabity threshold model\cite{Wright:1934wd,Lush:1948vc,FalconerAndMcKay,Falconer:1965bn}, the logistic model commonly employed in GWAS\cite{Risch:1996ub}, and the exponential of Risch's multiplicative model \cite{Risch:1990ty}, among other possibilities (the difference among these is simply in the choice of the monotonic function $\ell$). Previous work \cite{Slatkin:2008hw, Wray:2010ir} suggests that the exact choice of $\ell$ is unlikely to be particularly important, and our preliminary investigations (omitted due to space constraints) support this conclusion. As such I will take $\ell$ to be the probit link function of Wright's liability threshold model for the remainder of this proposal, though I will explore other choices to understand what impact if any they might have on our results.
 
-The number, frequencies and effect sizes of the sites contributing to variation in liability arise from population genetics processes. Liability increasing and decreasing mutations arise according to an infinite sites model with free recombination among sites at genome wide rates $\mu^+$ and $\mu^-$, with effect size distributions $f^+\left(\alpha\right)$ and $f^-\left(\alpha\right)$ respectively. Individuals with the disease have a reduced fitness of $1-S$ (disease free individuals have fitness 1).
+The number, frequencies and effect sizes of the sites contributing to variation in liability arise from population genetics processes. In our model, liability increasing and decreasing mutations arise according to an infinite sites model with free recombination among sites at genome wide rates $\mu^+$ and $\mu^-$, with effect size distributions $f^+\left(\alpha\right)$ and $f^-\left(\alpha\right)$ respectively. Individuals with the disease have a reduced fitness of $1-S$ (disease free individuals have fitness 1).
 
 The genetic architecture of the disease under this simple model is shaped by mutation-selection-drift balance, and can be related to standard results from quantitative genetics. The steady state is reached when
 \begin{align}
   U^+ = U^- + V_A \underbrace{S\phi\left(\Phi^{-1}\left(1-P\right)\right)}_{\text{selection gradient}}
   \label{univariate-bulk-eq}
 \end{align}
-where $U^+ = \mu^+\int_{0}^{\infty}\alpha f^+\left(\alpha\right)\mathrm{d}\alpha$ is the total per generation mutational increase in liabilty (with $U^-$ defined similarly as mutational pressure toward decreased liability). The final term accounts for the selection pressure toward lower liability; $V_A$ is the additive genetic variance of liability, $P$ is the disease prevalence, and $\phi$ and $\Phi$ are the Gaussian pdf and cdf repsectively. The compound term multiplying $V_A$ is a selection gradient in the standard quantitative genetics sense, and is a simple generalization of the gradient exerted by truncation selection to cases where the ``truncated'' individuals have fitness greater than zero  \cite{Charlesworth}.
-
-The steady state requirement allows us to derive expressions for any summary of genetic architecture. While the mutation rates, effect size distributions, and fitness cost of the disease are biological inputs, disease prevalence ($P$) and genetic variance ($V_A$) are dependent variables which evolve as part of the system. The additive genetic variance, as a product of the genetic architecture, depends on how the frequencies of individual alleles evolve, which depends on the individual selection coefficients they experience. An individual allele with effect size $\alpha$ on disease liability will experience a selection coefficient
+where $U^+ = \mu^+\int_{0}^{\infty}\alpha f^+\left(\alpha\right)\mathrm{d}\alpha$ is the total per generation mutational increase in liabilty (with $U^-$ defined similarly as mutational pressure toward decreased liability). The final term accounts for the selection pressure toward lower liability; $V_A$ is the additive genetic variance of liability, $P$ is the disease prevalence, and $\phi$ and $\Phi$ are the Gaussian pdf and cdf repsectively. The compound term multiplying $V_A$ is a selection gradient in the standard quantitative genetics sense, and is a simple generalization of the gradient exerted by truncation selection to cases where the ``truncated'' individuals have fitness greater than zero  \cite{Charlesworth}.  An individual allele in this model with effect size $\alpha$ on disease liability will experience a selection coefficient
 \begin{align}
   s = -2\alpha S\phi\left(\Phi^{-1}\left(1-P\right)\right)
   \label{sel-coef}
 \end{align}
-against the liability increasing homozygote, and will evolve under fitness additivity so long as $\alpha$ is small. We can then apply results from diffusion theory on the frequency spectrum of an allele conditional on its selection coefficient \cite{Sawyer:1992vb, Bustamante:2001wi,Ewens2004} to find the genetic architecture and disease prevalence at equilibrium. Given a solution to the model, we can derive 
+against the liability increasing homozygote, and will evolve under fitness additivity so long as $\alpha$ is small.
+
+Equations \eqref{univariate-bulk-eq} and \eqref{sel-coef} provide a path to solving the model, as the appearance of $S$ and $P$ in both equations couple together the behavior of the population at the macroscopic level with the microscopic dynamics of individual alleles frequencies.  While the mutation rates, effect size distributions, and fitness cost of the disease are biological inputs, disease prevalence ($P$) and genetic variance ($V_A$) are dependent variables which evolve as part of the system. The additive genetic variance, as a product of the genetic architecture, depends on how the frequencies of individual alleles evolve, which depends on the individual selection coefficients they experience.
+
+We can then apply results from diffusion theory on the frequency spectrum of an allele conditional on its selection coefficient \cite{Sawyer:1992vb, Bustamante:2001wi,Ewens2004} to find the genetic architecture and disease prevalence at equilibrium. 
 
 
 
@@ -91,6 +93,11 @@ In both of these simple environmental change scenarios, the a given mutation's e
 
 In addition to these simple scenarios, I will also use simulations to study how less recent changes to the environment (e.g. following the Out of Africa event) might have impacted genetic architecture.
 
+\jb{large shift only part of the population: bimodality}
+
+\jb{large shift only part of the population: bimodality}
+
+\jb{large shift only part of the population: bimodality}
 
 % A change in the environmental variance would result in a change in both the prevalence, similar to the mean shift case, as well as they heritability, yielding a means by which the two scenarios may plausibly be distinguished.
 
@@ -131,7 +138,17 @@ It is clear from population genetic work over the last decade and a half that de
 
 I will use simulation based approaches to study how the particular course of human demographic history has impacted the evolution of complex disease architecture and prevalence. Population size changes impact architecture through their modulation of the relationship between genetic drift and natural selection. All else being equal, genetic architectures in larger populations will be composed of more rare alleles, due to the increased efficiency of selection, though the precise impact depends on the details of the model. My investigation of the preliminary model also suggests that disease prevalence at equilibrium is fairly sensitive to population size. This is significant, specifically because the selection coefficient experienced by a particular allele depends on the disease prevalence. If prevalence evolves over time in response to changes in population size, then selection coefficients will change over time as well.
 
+\paragraph{Additional Complications}
 
+\jb{linkage-disequilibrium}
+
+\jb{linkage-disequilibrium}
+
+\jb{large deviations}
+
+\jb{a few more lines}
+
+\jb{a few more lines}
 % A point of particular importance will be understanding the extent to which flucuations in population size are responsible for deviations in the bulk behavior of the population from the equilibrium described in eqn \eqref{univariate-bulk-eq}. While parameters such as the total per individual mutational input ($U^{+/-}$), effect size distributions ($f^{+/-}(\alpha)$, and fitness cost of the disease ($S$) are not sensitive to changes in population size, my investigations of the preliminary model suggest that both the additive genetic variance ($V_A$) and the disease prevalence ($P$) are fairly sensitive to differences in population size at equilibrium (results not shown), which suggests that changes in population size over time may lead to changes in these quantities. This is significant, specifically because the selection coefficient experienced by a particular allele depends on the disease prevalence. If this quantity changes over time, then the selection coefficient experienced by individual alleles will also change over time, and will therefore require a simulation based approach
 
 
