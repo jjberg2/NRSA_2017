@@ -1,0 +1,40 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,mathrsfs,bm}
+\usepackage{color}
+\usepackage{cleveref}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{fullpage}
+\usepackage{natbib}
+\linespread{1.05}
+\newcommand{\jb}[1]{{\color{blue} (#1)} }
+\newcommand{\gs}[1]{{\color{red} (#1)}}
+\pagenumbering{gobble}
+\usepackage[margin=0.7in]{geometry}
+
+\usepackage{fontspec}
+\setmainfont{Arial}
+
+\title{Selection of Sponsor and Institution}
+\date{}
+\begin{document}
+
+
+\maketitle
+
+In considering options for my postdoctoral training, the Sella lab at Columbia University was a natural choice. Dr Sella and I share strong intellectual interests in understanding the evolution and population genetics of complex, polygenic phenotypes (e.g. disease or anthropometrics such as height), and  much of the work currently being done in the Sella lab focuses on understanding the population genetic processes which govern the evolution of traits of this nature. This is a relatively active area of work within the field broadly, but my search led me to believe that Dr Sella's approach contains the right combination of biological intuition, principled detailed mathematical modeling, and statistical inference from data to have the maximum impact on our understanding of these phenotypes. 
+
+Beyond our share intellectual interests, I believe Dr Sella's lab also provides the ideal environment for me to acquire the additional research skills I will need in order to begin my own independent research program. As also discussed in the applicant's background and fellowship goals section, Dr Sella's expertise in mathematical population genetics and his contribution of tools from statistical physics make for an ideal choice of mentor to increase the breadth and depth of my modeling abilities.
+
+The Sella lab also holds weekly joint journal clubs and lab meetings with the groups surrounding Molly Przeworski, also of the Colubmia University Department of Biological Science, and Joe Pickrell of the New York Genome Center (also adjunct faculty in Biological Sciences at Columbia). Dr Przeworski's lab is located in an adjoining space, and members of Dr Pickrell's lab typically spend a portion of their time on the Columbia campus. Drs Przeworski and Pickrell are both considered leading experts in human and non-human population genetics, but often take approaches that are more data driven than theoretical, and therefore complementary to Dr Sella's. Both groups include a talented array of students and post-docs who I will have the opportunity to interact with through our weekly joints meetings, and in informal contexts. All three groups are actively working to use data from genome wide association studies to understand the biology and evolution of human complex traits, and so this broader group makes for an ideal intellectual setting in which to carry out my project.
+
+The Sella, Przeworski and  Pickrell labs are embedded in the department of Biological Sciences at Columbia University. Collectively, the faculty of this department possess expertise across various sub-disciplines of biology, and through my interactions with them through informal meetings and department seminars will greatly improve the breadth of my exposure to cutting edge biological research.
+
+Lastly, the greater New York metropolitan area and the northeast megalopolis more broadly contain an extremely high density of high quality research in population genetics and associatied fields. I will attend the annual New York Area Population Genomics meeting, where I will present the results of my work. Dr Sella and I also have established relationships with population genetics researchers at many nearby institutions, including Andy Kern (Rutgers), Peter Andalfatto and Barbara Engelhardt (Princeton), Casey Brown and Yun Song (U Penn) and Joshua Schraiber (Temple), and I anticipate having the opportunity to present my work and receive feedback in local lab meetings at these neighboring institutions as well.
+
+
+
+
+\end{document}

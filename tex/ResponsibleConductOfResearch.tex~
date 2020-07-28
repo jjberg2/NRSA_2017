@@ -1,0 +1,37 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,mathrsfs,bm}
+\usepackage{color}
+\usepackage{cleveref}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{fullpage}
+\usepackage{natbib}
+\linespread{1.05}
+\newcommand{\jb}[1]{{\color{blue} (#1)} }
+\newcommand{\gs}[1]{{\color{red} (#1)}}
+
+\usepackage[margin=0.7in]{geometry}
+
+\usepackage{fontspec}
+\setmainfont{Arial}
+
+\title{Selection of Sponsor and Institution}
+\date{}
+\begin{document}
+
+
+As part of my instruction in the responsible conduct of research during this fellowship, I will partici- pate in the UC Davis Responsible Conduct of Research Program. This course is designed to meet NIH and NSF training grant requirements for the responsible conduct of research, and to provide necessary tools for building a solid foundation for research integrity. It consists of eight lecture-discussion sections of 1.5 hours each, spread over an academic year, covering the topics of
+• Research Misconduct
+• Conflict of Interest and Commitment
+• Human Subjects in Research
+• Animal Welfare
+• Data Acquisition, Sharing, Management and Ownership • Research Collaborations
+• Mentor/Mentee Relationships
+• Publication Practices and Responsible Authorship
+These sessions will be taught and facilitated by members of the faculty and administration with particular knowledge and expertise of the specific topics, and it is my understanding that researchers at all levels from a variety of fields at UC Davis participate in this program. It is designed to increase morale within research groups, reduce stress, and increase the likelihood of successful research activities. It is not a credit course, but attendance is taken and participants will receive a certificate of completion. My cosponsors may attend sessions relevant to their stage of the research career; and in any case, we have agreed to discuss issues that come up during these sessions.
+Furthermore, I will be having regular (at least weekly, probably more often) meetings with my cosponsors, Dr. Coop and Dr. Langley. Both have made it clear that these meetings are an appro- priate place for discussion of wider-ranging issues, including our mentor-mentee relationship, and the broader impacts of our research in society.
+
+
+\end{document}

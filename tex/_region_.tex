@@ -1,4 +1,4 @@
-\documentclass[11pt]{article}
+\message{ !name(ResearchStrategy.tex)}\documentclass[11pt]{article}
 \usepackage[T1]{fontenc}
 %^\usepackage[utf8]{inputenc}
 \usepackage{amsmath,mathrsfs,bm}
@@ -36,6 +36,9 @@
 \makeatother
 
 \begin{document}
+
+\message{ !name(ResearchStrategy.tex) !offset(-3) }
+
 
 
 
@@ -192,6 +195,10 @@ In principle, we can use results from GWAS in order to test models of genetic ar
 
 These pioneering efforts suffer from several notable problems. First, they rely on relatively coarse summary statistics that discard a great deal of information, limiting their ability to constrain the parameter space. Second, they make important and arbitrary assumption, e.g. that the distribution of selection coefficients for GWAS alleles resembles that for substitutions in proteins, despite mulitple lines of evidence that it does not \cite{EyreWalker:2007dl,Pickrell:2014bw,Racimo:2014cb}. Third, as discussed previously (see Background and Significance), the Eyre-Walker model makes some rather \textit{ad hoc} assumptions about the relationship between effect size and selection coefficient, which make biological interpretation of the inferences that rely on it challenging. I will address each of these concerns in the development of my inference approach.
 
+
+\paragraph{Approach}
+
+
 \paragraph{Approach}
 I will develop a composite likelihood framework for inferring the parameters that govern the evolution of complex disease. Using a likelihood approach to this problem will allow for both rigorous model comparison and parameter estimation\cite{Larribe:2011jb,Coffman:2015by}. The data I will rely on include paired estimates of effect sizes and allele frequencies from the loci discovered in GWAS, $\{\left(\alpha_i, x_i\right)\}$, and an estimate of the remaining genetic variance not explained by the genome-wide significant loci ($ V^*_A$). The composite-likelihood of the model parameters, $(\Theta_A$, given these data then takes the following general form
  \begin{align*}
@@ -212,19 +219,17 @@ where: $ Pr\left(K \mid \Theta_A , \Theta_S \right)$ is the probability of obser
 
 % The following consideration provide some intuition about the way in which the architecture uncovered by GWAS (Fig. \ref{joint-freq-effect-dist}) carries information about these evolutionary parameters. Provided the same evolutionary parameters with the exception of the mutational target size, we would expect the number of variants discovered ($K$) in a GWAS with a given sample size to increase with the mutational target size. Similarly, increasing the strength of selection acting on variants would lead to lower allele frequencies; and increasing the degree of pleiotropy, e.g., measured by the number of affected diseases, should decouple the relationship between an allele’s effect on the focal disease and on fitness, and thus on allele frequency.
 
-Intuitively, the number of variants discovered ($K$) in a GWAS gives information about the size of the mutational target and on the distribution of effect sizes, and specific knowledge of their effect sizes and frequencies ($\alpha_i$ and $x_i$) provides information about their selection coefficients and the impact of pleiotropy on the genetic architecture (see Fig \ref{joint-freq-effect-dist}). The genetic variance explained by loci which do not meet genome-wide signficance ($V_A^*$) carries information about all of the parameters. The proposed composite likelihood approach overcomes all the aforementioned shortcomings of earlier inferences attempts.  Most notably: 1) rather than assuming a poorly justified distribution of selection coefficients, I will infer it directly using a non-parametric approach, and 2) by relying on models that are more principled rather than ad-hoc, my inferences will have much clearer biological interpretation. 
+Intuitively, the number of variants discovered ($K$) in a GWAS gives information about the size of the mutational target and on the distribution of effect sizes, and specific knowledge of their effect sizes and frequencies ($\alpha_i$ and $x_i$) provides information about their selection coefficients and the impact of pleiotropy on the genetic architecture (see Fig \ref{joint-freq-effect-dist}). The genetic variance explained by loci which do not meet genome-wide signficance ($V_A^*$) carries information about all of the parameters.
 
-The approach is also easily ammenable to extension. The first extension I will pursue involves modifying the term describing the genetic variance accounted for by loci not reaching genome-wide significant SNPs ($p\left(V_A^* \mid \Theta_A , \Theta_S\right)$), to account for how this genetic variance is distributed among loci with differing minor allele frequencies (i.e. $p\left(V_A^*\left(x\right) \mid \Theta_A , \Theta_S\right)$). While not as informative as directly observed genome wide significant loci, it provides consierably richer information than the unexplained variance alone, (as, for example, diseases with more variance contributed by low frequency alleles will have architectures dominated by larger selection coefficients). There are multiple methods available which have the capability to estimate how genetic variance is distributed among allele frequency bins\cite{Lee:2012iu,Speed:2016ec,Zhu:2016cx,Evans:2017ce}, all of which rely in some way on comparing the pattern of phenotypic resemblance among individuals with pattern of genetic relatedness for alleles in different frequency classes. As part of the proposed work, I will explore which available method is best suited to incorporate into my approach.
+The proposed CL approach overcomes all the aforementioned shortcomings of earlier inferences attempts.  Most notably: 1) Rather than assuming a poorly justified distribution of selection coefficients, I will infer it directly using a non-parametric approach, and 2) by relying on models that are more principled rather than ad-hoc, my inferences will have much clearer biological interpretation. 
 
-
-% These include 1) separate alleles into different MAF bins and estimate the proportion of variance explained by alleles in each bin\cite{Lee:2012iu,Evans:2017ce}, or 2) estimating only a single variance component, but weighting the contribution of SNPs with a given frequency to the genetic relationship matrix used for this estimation according to the parameters being inferred ($\Theta_A$)\cite{Speed:2016ec}.
-
-
-% There are multiple methods available which have the capability to estimate how genetic variance is distributed among allele frequency bins\cite{Lee:2012iu,Speed:2016ec,Zhu:2016cx,Evans:2017ce}, and I will explore which is most useful for my proposed use.
+In addition, the approach is ammenable to extension in a variety of ways. The first extension I will pursue involves modifying the term describing the genetic variance not accounted for by genome-wide significant SNPs ($p\left(V_A^* \mid \Theta_A , \Theta_S\right)$), to account for how this genetic variance is distributed among alleles in different frequency bins (i.e. $p\left(V_A^*\left(x\right) \mid \Theta_A , \Theta_S\right)$). While  
 
 
+Unfortunately, even in very large GWAS, a significant number of variants will remain undetected, restricting our inference to use only those with the largest effect sizes. We can overcome this limitation by incorporating recently developed methods related to Yang and Visscher's ``GCTA''\cite{Yang:2011hd} that estimate the relationship between minor allele frequency (MAF) and variance explained across all SNPs regardless of whether they are genome wide significant \cite{Speed:2017ec, Evans:2017ce}, as Eq \eqref{exp-for-arch} can be leveraged to make quantitative predictions about this relationship. Intuitively, diseases with genetic architectures dominated by large selection coefficients on individual alleles will have more of the genetic variance explained by rare alleles, though this relationship will be moderated by additional factors such as pleiotropy and demography.
 
-This aim will produce the first statistical framework for inferring the parameters underlying complex genetic disease architecture and prevalence that is grounded in quantitative and population genetic principles. I will apply this framework to GWAS data from at least 10 complex disease, where I will compare models to ascertain which factors play a role in which disease and estimate the salient parameters for that disease under the best model. An open access software package will be made freely available allowing other researchers to apply the inference to their datasets, and to improve the method by incorporating future theoretical advances.
+
+This aim will produce the first statistical framework for inferring the parameters underlying complex genetic disease architecture and prevalence that is grounded in quantitative and population genetic principles. We will apply this framework to GWAS data from…, where we will compare models to ascertain which factors play a role in which disease and then apply the appropriate model to estimate… An open access software package will be made freely available allowing other researchers to apply the inference to their datasets, and to improve the method by incorporating future theoretical advances.
 
 
 
@@ -259,3 +264,5 @@ This aim will produce the first statistical framework for inferring the paramete
 \bibliography{library,library2}
 \bibliographystyle{unsrt}
 \end{document}
+
+\message{ !name(ResearchStrategy.tex) !offset(-268) }

@@ -1,0 +1,10 @@
+@book{CharlesworthBook,
+  author    = {Charlesworth, Brian and Charlesworth, Deborah}, 
+  title     = {Elements of Evolutionary Genetics},
+  publisher = {Roberts and Company},
+  year      = 2010,
+  address   = {4950 South Yosemite Stree, F2 #197},
+  month     = 7,
+  note      = {An optional note},
+  isbn      = {3257227892}
+}
